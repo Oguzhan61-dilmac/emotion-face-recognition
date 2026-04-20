@@ -12,7 +12,7 @@ FACE_MODEL_PATH = os.path.join(MODELS_DIR, "res10_300x300_ssd_iter_140000_fp16.c
 EMO_MODEL_PATH = os.path.join(MODELS_DIR, "emotion_cnn.h5")
 
 # FER2013 sırası
-EMOTIONS = ["Kızgın", "İğrenme", "Korku", "Mutlu", "Üzgün", "Şaşkın", "Nötr"]
+EMOTIONS = ["Kizgin", "İğrenme", "Korku", "Mutlu", "Uzgun", "Şaşkın", "Notr"]
 
 
 def preprocess_face(gray_face_48):
@@ -106,7 +106,7 @@ def main():
             conf, x1, y1, x2, y2 = best
 
             # yüz kutusu
-            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 255, 255), 4)
 
             face_roi = frame[y1:y2, x1:x2]
             if face_roi.size > 0:
